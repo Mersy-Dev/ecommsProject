@@ -9,7 +9,8 @@ const { createUser,
         updateUser, 
         blockUserById, 
         unblockUserById, 
-        refreshToken } = require('../controllers/userController');
+        refreshToken, 
+        logout} = require('../controllers/userController');
 const { authMiddleware, isAdmin,  } = require('../middlewares/authMiddleware');
 
 
@@ -18,6 +19,7 @@ router.post('/register', createUser );
 router.post('/login', loginUser );
 router.get('/all-users', getAllUsers );
 router.get('/refresh', refreshToken );
+router.get('/logout', logout);
 router.get('/:id', authMiddleware, isAdmin, getUserById );
 router.put('/edit-user', authMiddleware, updateUser);
 router.delete('/:id', deleteUserById);

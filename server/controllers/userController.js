@@ -178,6 +178,32 @@ const unblockUserById = asyncHandler(async (req, res) => {
 
 
 
+//logout user
+
+const logout =  asyncHandler(async (req, res) => {
+   const cookie = req.cookies;  
+   if(!cookie.refreshToken){
+       throw new Error('No refresh token found for this user');
+   };
+    const refreshToken = cookie.refreshToken;
+    const user = await User.findOne({refreshToken});
+    if(!user){
+        res.clearCookie('refreshToken',{
+            httpOnly: true,
+            secure: true,
+        
+        });
+        return res.json({message: 'User not found'});
+    }
+    await User.findOneAndUpdate({refreshToken}, {refreshToken: ''});
+    res.clearCookie('refreshToken',{
+        httpOnly: true,
+        secure: true,
+    
+    });
+    return res.json({message: 'Logout successfully'});
+});
+
 
 
 
@@ -191,6 +217,7 @@ module.exports = { createUser,
     deleteUserById,
     blockUserById,
     unblockUserById,
-    refreshToken
+    refreshToken,
+    logout
 
 };
