@@ -6,6 +6,7 @@ const colors = require('colors')
 const mongoose = require('mongoose'); 
 const cors = require("cors");
 const { errorHandler, notFound } = require('./middlewares/errorHandler');
+const cookieParser = require('cookie-parser');
 
 const connectDB = require('./config/dbConnect');
 
@@ -17,7 +18,9 @@ const authRoute = require('./routes/authRoute');
 app.use(express.urlencoded({extended: false}));
 app.use(bodyParser.json())
 app.use(express.json({limit: "10mb"}));
-app.use(cors({origin: "*"} ))
+app.use(cors({origin: "*"} ));
+app.use(cookieParser());
+
 
 
 
