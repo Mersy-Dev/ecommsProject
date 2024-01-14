@@ -39,11 +39,13 @@ const productSchema = new mongoose.Schema({
     },
     sold: {
         type: Number,
-        default: 0
+        default: 0,
+        //if u want to hide this field from user
+         //select: false,
+
     },
     images: {
         type: Array,
-        default: []
     },
     color: {
         type: String,

@@ -1,3 +1,4 @@
+const { json } = require('body-parser');
 const Product = require('../models/productModel');
 const asyncHandler = require('express-async-handler');
 const slugify = require('slugify');
@@ -41,9 +42,49 @@ const getProduct = asyncHandler(async (req, res) => {
 
 //get all products
 const getAllProducts = asyncHandler(async (req, res) => {
+    
     try {
-        const getAllproduct = await Product.find();
-        res.json(getAllproduct)
+        //filtering
+        const queryObj = { ...req.query };
+        const excludedFields = ['page', 'sort', 'limit', 'fields'];
+        excludedFields.forEach(el => delete queryObj[el]);
+        console.log(queryObj);
+
+        let queryStr = JSON.stringify(queryObj);
+        queryStr = queryStr.replace(/\b(gte|gt|lt|lte)\b/g, match => `$${match}`);
+        let query = Product.find(JSON.parse(queryStr));
+
+        //sorting
+        if (req.query.sort) {
+            const sortBy = req.query.sort.split(',').join(' ');
+           query = query.sort(sortBy);
+        } else {
+           query= query.sort('-createdAt');
+        }
+        
+        //field limiting
+        if (req.query.fields) {
+            const fields = req.query.fields.split(',').join(' ');
+            query = query.select(fields);
+        } else {
+            query = query.select('-__v');
+        }
+
+        //pagination
+        const page = req.query.page * 1 || 1;
+        const limit = req.query.limit * 1 || 10;
+        const skip = (page - 1) * limit;
+        query = query.skip(skip).limit(limit);
+
+        if (req.query.page) {
+            const numProducts = await Product.countDocuments();
+            if (skip >= numProducts) throw new Error('This page does not exist');
+        }
+        
+
+
+        const products = await query;
+        res.json(products)
     }
     catch (error) {
         throw new Error(error)
@@ -70,7 +111,7 @@ const updateProduct = asyncHandler(async (req, res) => {
 const deleteProduct = asyncHandler(async (req, res) => {
     const id = req.params.id;  // Extract the 'id' from req.params
     try {
-        const deleteProduct = await Product.findOneAndDelete({ _id: id });
+        const deleteProduct = await Product.findOneAndDelete({ _id: id }); 
         res.json(deleteProduct);
     } catch (error) {
         console.error(error);
