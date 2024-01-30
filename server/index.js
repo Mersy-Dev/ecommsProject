@@ -16,6 +16,7 @@ const authRoute = require('./routes/authRoute');
 const productRoute = require('./routes/productRoute');
 const blogRoute = require('./routes/blogRoute');
 const categoryRoute = require('./routes/prodCategoryRoute');
+const blogCatRoute = require('./routes/blogCatRoute');
 
 
 app.use(morgan('dev'));
@@ -32,6 +33,7 @@ app.use('/api/user', authRoute);
 app.use('/api/product', productRoute)
 app.use('/api/blog', blogRoute)
 app.use('/api/category', categoryRoute);
+app.use('/api/blogcategory', blogCatRoute);
 
 
 app.use(notFound);
