@@ -17,6 +17,8 @@ const productRoute = require('./routes/productRoute');
 const blogRoute = require('./routes/blogRoute');
 const categoryRoute = require('./routes/prodCategoryRoute');
 const blogCatRoute = require('./routes/blogCatRoute');
+const brandRoute = require('./routes/brandRoute');
+
 
 
 app.use(morgan('dev'));
@@ -34,6 +36,7 @@ app.use('/api/product', productRoute)
 app.use('/api/blog', blogRoute)
 app.use('/api/category', categoryRoute);
 app.use('/api/blogcategory', blogCatRoute);
+app.use('/api/brand', brandRoute);
 
 
 app.use(notFound);
