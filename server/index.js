@@ -18,6 +18,8 @@ const blogRoute = require('./routes/blogRoute');
 const categoryRoute = require('./routes/prodCategoryRoute');
 const blogCatRoute = require('./routes/blogCatRoute');
 const brandRoute = require('./routes/brandRoute');
+const couponRoute = require('./routes/couponRoute');
+
 
 
 
@@ -37,6 +39,8 @@ app.use('/api/blog', blogRoute)
 app.use('/api/category', categoryRoute);
 app.use('/api/blogcategory', blogCatRoute);
 app.use('/api/brand', brandRoute);
+app.use('/api/coupon', couponRoute);
+
 
 
 app.use(notFound);
