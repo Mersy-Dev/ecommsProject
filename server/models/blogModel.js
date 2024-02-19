@@ -44,10 +44,7 @@ var blogSchema = new mongoose.Schema(
             type: String,
             default: "Admin",
         },
-        images: {
-            type: String,
-            default: "https://bakewithshivesh.com/wp-content/uploads/2018/06/how-to-monetize-your-blog.jpg",
-        },
+        images: [],
     },
     {
         toJSON: {
