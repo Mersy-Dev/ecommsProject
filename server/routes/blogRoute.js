@@ -7,6 +7,8 @@ const router = express.Router();
 
 
 router.post("/", authMiddleware, isAdmin, createBlog);
+router.put('/upload/:id', authMiddleware, isAdmin, uploadPhoto.array("images", 2), blogImgResize, uploadImages)
+
 router.put("/like", authMiddleware, isAdmin, likeBlog);
 router.put("/dislike", authMiddleware, isAdmin, dislikeBlog);
 router.get("/getAllBlog", authMiddleware, isAdmin, getAllBlogs);

@@ -67,5 +67,5 @@ const blogImgResize = async (req, res, next) => {
 };
 
 
-
+ 
 module.exports = { uploadPhoto, productImgResize, blogImgResize };
