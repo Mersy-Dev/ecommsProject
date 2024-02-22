@@ -21,6 +21,7 @@ const brandRoute = require('./routes/brandRoute');
 const colorRoute = require('./routes/colorRoute');
 
 const couponRoute = require('./routes/couponRoute');
+const enqRoute = require('./routes/enqRoute');
 
 
 
@@ -43,6 +44,7 @@ app.use('/api/blogcategory', blogCatRoute);
 app.use('/api/brand', brandRoute);
 app.use('/api/coupon', couponRoute);
 app.use('/api/color', colorRoute);
+app.use('/api/enquiry', enqRoute);
 
 
 
