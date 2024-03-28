@@ -27,9 +27,9 @@ const Header = () => {
             </div>
             <div className="col-5">
             <div className="input-group">
-                <input type="text" className="form-control py-2" placeholder="Search Product Here..." aria-label="Search Product Here..." aria-describedby="basic-addon2" />
-                <span className="input-group-text p-2" id="basic-addon2"><BsSearch className='fs-6' /></span>
-              </div>
+              <input type="text" className="form-control py-2" placeholder="Search Product Here..." aria-label="Search Product Here..." aria-describedby="basic-addon2" />
+              <span className="input-group-text p-2" id="basic-addon2"><BsSearch className='fs-6' /></span>
+            </div>
             </div>
             <div className="col-5">
               <div className="header-upper-links d-flex align-items-center justify-content-between">
@@ -87,8 +87,8 @@ const Header = () => {
                 <div className='menu-links'>
                   <div className="d-flex align-items-center gap-15">
                     <NavLink to='/'>Home</NavLink>
-                    <NavLink to='/'>Our Stores</NavLink>
-                    <NavLink to='/'>Blog</NavLink>
+                    <NavLink to='/store'>Our Stores</NavLink>
+                    <NavLink to='/blogs'>Blog</NavLink>
                     <NavLink to='/contact'>Contact</NavLink>
                   </div>
                 </div>
