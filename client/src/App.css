@@ -540,7 +540,43 @@ a {
 /* Our service end */
 
 
+/* Contact page  */
+  .contact-inner-wrapper{
+    padding: 30px 20px;
+    border-radius: 15px;
+    background-color: white;
+    gap: 15px;
 
+  }
+
+  .contact-inner-wrapper>div{
+    width: 48%;
+  }
+
+  .contact-title{
+    font-size: 26px;
+    line-height: 35px;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  .contact-inner-wrapper form .form-control{
+    background-color: var(--color-f5f5f7);
+    border-radius: 10px;
+    border-color: transparent;
+    padding: 11px;
+  }
+
+  .contact-inner-wrapper ul{
+    list-style: none;
+  }
+
+  .contact-inner-wrapper ,
+  .contact-inner-wrapper a,
+  .contact-inner-wrapper p{
+    color: var(--color-777777);
+  }
+/* Contact page End */
 
 
 
