@@ -5,6 +5,7 @@ import ProductCard from '../components/ProductCard';
 import ReactStars from "react-rating-stars-component";
 import ReactImageZoom from 'react-image-zoom';
 import Color from '../components/Color';
+import Container from '../components/Container';
 
 import { TbGitCompare } from 'react-icons/tb';
 import { AiOutlineHeart } from 'react-icons/ai';
@@ -31,8 +32,7 @@ const SingleProduct = () => {
         <>
             <Meta title={" Products"} />
             <BreadCrumb title=" Products" />
-            <div className="main-product-wrapper py-5 home-wrapper-2">
-                <div className="container-xxl">
+            <Container class1="main-product-wrapper py-5 home-wrapper-2">
                     <div className="row">
                         <div className="col-6">
                             <div className="main-product-image">
@@ -147,11 +147,9 @@ const SingleProduct = () => {
                         </div>
 
                     </div>
-                </div>
-            </div>
+            </Container>
 
-            <div className="description-wrapper home-wrapper-2">
-                <div className="container-xxl">
+            <Container class1="description-wrapper home-wrapper-2">
                     <div className="row">
                         <div className="col-12">
                             <h4 className="section-heading"> Description</h4>
@@ -160,10 +158,9 @@ const SingleProduct = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <section className="reviews-wrapper home-wrapper-2">
-                <div className="container-xxl">
+            </Container>
+
+            <Container class1="reviews-wrapper home-wrapper-2">
                     <div className="row">
                         <div className="col-12">
                             <h3 id="reviews"> Reviews</h3>
@@ -232,12 +229,10 @@ const SingleProduct = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+            </Container>
 
 
-            <section className="popular-wrapper py-5 home-wrapper-2">
-                <div className="container-xxl">
+            <Container className="popular-wrapper py-5 home-wrapper-2">
                     <div className="row">
                         <div className='col-12'>
                             <h3 className="section-heading">Our Popular Product </h3>
@@ -250,8 +245,7 @@ const SingleProduct = () => {
                         <ProductCard />
                         <ProductCard /> */}
                     </div>
-                </div>
-            </section>
+            </Container>
 
         </>
     )
