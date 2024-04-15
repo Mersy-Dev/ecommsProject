@@ -72,12 +72,12 @@ const Header = () => {
             <div className="col-12">
               <div className="menu-bottom d-flex align-items-center gap-30">
                 <div>
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle bg-transparent border-0 gap-15 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div className="dropdown">
+                    <button className="btn btn-secondary dropdown-toggle bg-transparent border-0 gap-15 d-flex align-items-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                      <img src="images/menu.svg" alt="" />
                       <span className='me-5 d-inline-block'>Shop categories </span>
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul className="dropdown-menu">
                       <li><Link className="dropdown-item text-white" to="">Action</Link></li>
                       <li><Link className="dropdown-item text-white" to="">Another action</Link></li>
                       <li><Link className="dropdown-item text-white" to="">Something else here</Link></li>
@@ -87,7 +87,7 @@ const Header = () => {
                 <div className='menu-links'>
                   <div className="d-flex align-items-center gap-15">
                     <NavLink to='/'>Home</NavLink>
-                    <NavLink to='/store'>Our Stores</NavLink>
+                    <NavLink to='/product'>Our Stores</NavLink>
                     <NavLink to='/blogs'>Blog</NavLink>
                     <NavLink to='/contact'>Contact</NavLink>
                   </div>

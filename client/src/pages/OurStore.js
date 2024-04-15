@@ -44,7 +44,7 @@ const OurStore = () => {
                                             </label>
                                         </div>
 
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <label className="form-check-label" htmlFor=''>
                                                 <input type="checkbox" className="form-check-input" name="" id="" value="checkedValue" />
                                                 Out of Stock {0}
@@ -71,14 +71,14 @@ const OurStore = () => {
 
                                     <h5 className="sub-title"> Size</h5>
                                     <div>
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input type="checkbox" className="form-check-input" name="" id="color-1" value="checkedValue" />
                                             <label className="form-check-label" htmlFor='color-1'>
                                                 S {2}
                                             </label>
                                         </div>
 
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input type="checkbox" className="form-check-input" name="" id="color-2" value="checkedValue" />
                                             <label className="form-check-label" htmlFor='color-2'>
                                                 M {2}
@@ -164,7 +164,7 @@ const OurStore = () => {
                                 <div className="d-flex justify-content-between align-items-center">
                                     <div className="d-flex align-items-center gap-10">
                                         <p className='mb-0 d-block' style={{ width: "100px" }}>Sort By:</p>
-                                        <select name="" className='form-control form-select' id="">
+                                        <select name="" defaultValue={"manual"} className='form-control form-select' id="">
                                             <option value="manual">Featured</option>
                                             <option value="best-selling" selected="selected">Best Selling</option>
                                             <option value="title-ascending">Alphabetically, A-Z</option>
