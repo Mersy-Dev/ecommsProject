@@ -12,7 +12,7 @@ router.put('/upload/:id', authMiddleware, isAdmin, uploadPhoto.array("images", 2
 router.put("/like", authMiddleware, isAdmin, likeBlog);
 router.put("/dislike", authMiddleware, isAdmin, dislikeBlog);
 router.get("/", getAllBlogs);
-router.get("/get/:id", authMiddleware, isAdmin, getBlogById);
+router.get("/:id", getBlogById);
 router.put("/update/:id", authMiddleware, isAdmin, updateBlog);
 router.delete("/delete/:id", authMiddleware, isAdmin, deleteBlog);
 

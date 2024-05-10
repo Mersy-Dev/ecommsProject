@@ -50,8 +50,6 @@ app.use('/api/upload', uploadRoute);
 
 
 
-
-
 app.use(notFound);
 app.use(errorHandler);
 
